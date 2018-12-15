@@ -6,12 +6,165 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">FileBucket</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Profile Bucket dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fab fa-bitbucket fa-lg"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" data-toggle="modal" data-target="#ub-mod">Upload Bucket</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#cp-mod">Change Password</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Sign Out</a>
+          </div>
+        </div>
+
+            <!-- Upload a bucket! -->
+        <div class="modal fade" id="ub-mod">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h3>Upload a bucket</h3>
+        </div>
+          <div class="modal-body">
+            <form id="change-password-form">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Image Tags</label>
+                <input name="tags" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <small class="form-text text-muted">Up to 4 seperated with commas.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Example file input</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <p class="auth-message" id="message-change"></p>
+            <div class="close"><button type="button" class="cls btn btn-secondary" data-dismiss="modal">Close</button></div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+            <!-- Change Password Modal -->
+        <div class="modal fade" id="cp-mod">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+              <h3>Create a new password.</h3>
+            </div>
+            <div class="modal-body">
+              <form id="change-password-form">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Current Password</label>
+                  <input name="passwords[old]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">New Password</label>
+                  <input name="passwords[new]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <p class="auth-message" id="message-change"></p>
+              <div class="close"><button type="button" class="cls btn btn-secondary" data-dismiss="modal">Close</button></div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+            <!-- Searchbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+
+      </nav>
+
+      <!-- Sign up modal -->
+        <div class="modal fade" id="sign-up" data-backdrop='static' data-keyboard="false">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+              <h3>Sign up to join FileBucket</h3>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up-form">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input name="credentials[email]" type="password" class="form-control"  placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input name="credentials[password]" type="password" class="form-control"  placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                  <input name="credentials[password_confirmation]" type="password" class="form-control"  placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+              <div id="skip-sign-up"><button id='skip' type="button" class="cls btn btn-primary" data-toggle="modal" data-target="#sign-in" data-dismiss="modal">Already have an account?</button></div>
+            </div>
+            <div class="modal-footer">
+              <p class="auth-message" id="message-up"></p>
+              <div id="sign-up-close" class="close"><button type="button" class="cls btn btn-secondary" data-toggle="modal" data-target="#sign-in" data-dismiss="modal">Close</button></div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Sign In Modal -->
+        <div class="modal fade" id="sign-in" data-backdrop='static' data-keyboard="false">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+              <h3>Sign in to share your Rhody secrets.</h3>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in-form">
+
+                <div class="form-group">
+                  <label>Email</label>
+                  <input name="credentials[email]" type="password" class="form-control"  placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input name="credentials[password]" type="password" class="form-control"  placeholder="Password">
+                </div>
+                <div class="form-content"><input type="submit" value="Sign In" class="btn btn-primary"/></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <p class="auth-message" id="message-in"></p>
+              <div id="sign-in-close" class="close"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
     </body>
 </html>
