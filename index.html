@@ -7,6 +7,7 @@
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -28,6 +29,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" data-toggle="modal" data-target="#ub-mod">Upload Bucket</a>
             <a class="dropdown-item" data-toggle="modal" data-target="#cp-mod">Change Password</a>
+              <a class="dropdown-item" data-toggle="modal" data-target="#get-buckets">Get My Buckets</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" id="sign-out" href="#">Sign Out</a>
           </div>
@@ -41,7 +43,7 @@
           <h3>Upload a bucket</h3>
         </div>
           <div class="modal-body">
-            <form id="upload-form">
+            <form id="upload-form" enctype="multipart/form-data">
               <div class="form-group">
                 <label>Image Tags</label>
                 <input name="tags" type="text" class="form-control" placeholder="Password">
@@ -162,6 +164,13 @@
             </div>
           </div>
         </div>
+
+        <!-- Load Screen below navbar -->
+
+        <h1 id="logo"><span id="logo-color">File</span>Bucket</h1>
+
+        <img id="homescreen-jpg" src="public/images/homescreen.jpg">
+
 
 
 
