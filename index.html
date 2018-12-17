@@ -41,15 +41,15 @@
           <h3>Upload a bucket</h3>
         </div>
           <div class="modal-body">
-            <form id="change-password-form">
+            <form id="upload-form">
               <div class="form-group">
-                <label for="exampleInputPassword1">Image Tags</label>
-                <input name="tags" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label>Image Tags</label>
+                <input name="tags" type="text" class="form-control" placeholder="Password">
                 <small class="form-text text-muted">Up to 4 seperated with commas.</small>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlFile1">Example file input</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file">
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -72,12 +72,12 @@
             <div class="modal-body">
               <form id="change-password-form">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Current Password</label>
-                  <input name="passwords[old]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label>Current Password</label>
+                  <input name="passwords[old]" type="password" class="form-control"  placeholder="Password">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">New Password</label>
-                  <input name="passwords[new]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label>New Password</label>
+                  <input name="passwords[new]" type="password" class="form-control"  placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
@@ -111,7 +111,7 @@
               <form id="sign-up-form">
                 <div class="form-group">
                   <label>Email</label>
-                  <input name="credentials[email]" type="password" class="form-control"  placeholder="Email">
+                  <input name="credentials[email]" type="text" class="form-control"  placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label>Password</label>
@@ -146,7 +146,7 @@
 
                 <div class="form-group">
                   <label>Email</label>
-                  <input name="credentials[email]" type="password" class="form-control"  placeholder="Email">
+                  <input name="credentials[email]" type="text" class="form-control"  placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label>Password</label>
