@@ -1,6 +1,6 @@
 const config = require ('../config.js')
 // eventually we will need this require, so I'll just put it in
-//const store = require('../store.js')
+const store = require('../store.js')
 
 const signUp = function(data) {
     return $.ajax({
