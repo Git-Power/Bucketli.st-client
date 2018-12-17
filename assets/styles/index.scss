@@ -1,1 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
+
+#homescreen-jpg {
+  background-size: cover;
+  width: 100vw;
+  min-width: 1000px;
+  height: auto;
+}
+
+#logo {
+  font-family: 'Righteous', cursive;
+  font-size: 10em;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+#logo-color {
+  font-family: 'Righteous', cursive;
+  color: #337df6;
+}
+
+.collapse {
+  justify-content: flex-end;
+}
