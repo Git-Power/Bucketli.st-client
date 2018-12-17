@@ -1,7 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events.js')
-const uiEvents = require('./auth/ui.js')
+const bucketEvents = require('./buckets/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -18,4 +18,7 @@ $(() => {
   $('.cls').click(function() {
     $('.auth-message').text('')
   })
+  $('#upload-form').on('submit', bucketEvents.onUploadBucket)
+  $('#delete-bucket').on('click', bucketEvents.onDeleteBucket)
+  $('#update-bucket').on('submit', bucketEvents.onUpdateBucket)
 })
