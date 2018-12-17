@@ -2,6 +2,9 @@
 
 [![Wire Fram](https://imgur.com/gZaWxfi)]
 
+FILE BUCKET:
+File bucket is a single web page app that allows it's users to upload and save photos. After signing up for an account with File Bucket, the user may upload load pictures of buckets, share them and download them.
+
 
 FILE BUCKET USER STORIES:
 
@@ -17,6 +20,17 @@ FILE BUCKET USER STORIES:
 
 6. As a user, I should be able to change password or sign out after being signed into my user account.
 
+Technologies Used: 
+1. HTML
+2. CSS
+4. Javascript
+5. jQuery
+6. AJAX
+7. Handle Bars
+
+
 FILE BUCKET CLIENT REPOSITORY:
 https://github.com/Git-Power/FileBucket-client
+
+
 
