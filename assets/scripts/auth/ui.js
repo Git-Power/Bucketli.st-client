@@ -30,13 +30,25 @@ const signInFailure = function (error) {
     console.error('signInFailure ran. Error is :', error)
 }
 
+const signOutSuccess = function (data) {
+    $('#sign-up').modal()
+}
+
+const changePasswordSuccess = function (data) {
+    $('#message-password').text('Changed password successfully')
+}
+
+const changePasswordFailure = function (error) {
+    console.error(error)
+    $('#message-password').text('Password is incorrect')
+}
+
 module.exports = {
     signUpSuccess,
     signUpFailure,
     signInSuccess,
-    signInFailure
-    // signOutSuccess,
-    // changePasswordSuccess,
-    // changePasswordFailure,
-
+    signInFailure,
+    signOutSuccess,
+    changePasswordSuccess,
+    changePasswordFailure
 }
