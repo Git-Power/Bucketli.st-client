@@ -12,6 +12,8 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
     store.user = data.user
+    //('#sign-in').modal('toggle')
+     
     
 }
 
