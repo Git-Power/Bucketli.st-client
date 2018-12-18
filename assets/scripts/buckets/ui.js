@@ -22,7 +22,8 @@ const getAllBucketsSuccess = function (data) {
     const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets })
     $('#home-screen').hide()
     $('.gallery-all').html(getAllBucketsHtml)
-    console.log(data)
+    console.log("data is", data)
+    console.log("data.buckets is", data.buckets)
 }
 
 const getAllBucketsFailure = function () {
