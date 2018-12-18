@@ -36,8 +36,20 @@ const updateBucket = function(data) {
     })
 }
 
+const getAllBuckets = function () {
+        return $.ajax({
+            url: config.apiUrl + '/buckets',
+            method: 'GET',
+            headers: {
+                Authorization: 'Token token=' + store.user.token 
+            },
+          })
+}
+
+
 module.exports = {
     uploadBucket,
     deleteBucket,
-    updateBucket
+    updateBucket,
+    getAllBuckets
 }

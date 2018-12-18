@@ -31,9 +31,16 @@ const onUpdateBucket = function (event) {
     .catch(ui.uploadBucketFailure)
 }
 
+const onGetAllBuckets = function () {
+    event.preventDefault()
+    api.getAllBuckets() 
+    .then(ui.getAllBucketsSuccess)
+    .catch(ui.getAllBucketsFailure)
+}
+
 module.exports = {
     onUploadBucket,
     onDeleteBucket,
-    onUpdateBucket
-
+    onUpdateBucket,
+    onGetAllBuckets
 }
