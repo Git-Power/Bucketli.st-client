@@ -32,7 +32,8 @@ const onUpdateBucket = function (event) {
 }
 
 const onGetAllBuckets = function () {
-    event.preventDefault()
+    //event.preventDefault()
+    console.log("events.onGetAllBuckets ran")
     api.getAllBuckets() 
     .then(ui.getAllBucketsSuccess)
     .catch(ui.getAllBucketsFailure)

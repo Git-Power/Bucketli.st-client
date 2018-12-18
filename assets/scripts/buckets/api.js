@@ -37,6 +37,7 @@ const updateBucket = function(data) {
 }
 
 const getAllBuckets = function () {
+    console.log("api.getAllBuckets ran")
         return $.ajax({
             url: config.apiUrl + '/buckets',
             method: 'GET',

@@ -18,14 +18,15 @@ const uploadBucketFailure = function () {
 }
 
 
-const getAllBucketsSuccess = function () {
+const getAllBucketsSuccess = function (data) {
     const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets })
     $('#home-screen').hide()
     $('.gallery-all').html(getAllBucketsHtml)
+    console.log(data)
 }
 
 const getAllBucketsFailure = function () {
-
+    console.log("getAllBucketsFailure ran")
 }
 
 
