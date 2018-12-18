@@ -1,18 +1,35 @@
 const store = require('../store.js')
+const getAllBucketsTemplate = require('../templates/get-all.handlebars')
+const getMyBucketsTemplate = require('../templates/get-my.handlebars')
 
 const uploadBucketSuccess = function () {
-    //message indicating successful upload
-    //modal disappears
-    //show upload at "beginning" of uploads list
-    
+    $('#message-change').text("Your bucket has been successfully uploaded")
+    //instead of a written message
+    //go to get all buckets for this user
+    //show newest upload at "beginning" of uploads list
+    document.getElementById('upload-form').reset()
+    //user should be able to continue to make uploads until they
+    //hit close button... then all new images appear at beginning
 }
 
 const uploadBucketFailure = function () {
-    //message indicating successful upload
-    //modal disappears
-    //show upload at "beginning" of uploads list
-    
+    $('#message-change').text("There seems to be a problem. Please try again.")
+    document.getElementById('upload-form').reset()
 }
+
+
+const getAllBucketsSuccess = function (data) {
+    const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets })
+    $('#home-screen').hide()
+    $('.gallery-all').html(getAllBucketsHtml)
+    console.log(data)
+}
+
+const getAllBucketsFailure = function () {
+    console.log("getAllBucketsFailure ran")
+}
+
+
 
 const deleteBucketSuccess = function () {
 
@@ -33,6 +50,8 @@ const updateBucketFailure = function () {
 module.exports = {
     uploadBucketSuccess,
     uploadBucketFailure,
+    getAllBucketsSuccess,
+    getAllBucketsFailure,
     deleteBucketSuccess,
     deleteBucketFailure,
     updateBucketSuccess,
