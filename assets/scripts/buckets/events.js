@@ -1,4 +1,4 @@
-//const getFormFields = require('../../../lib/get-form-fields.js') 
+const getFormFields = require('../../../lib/get-form-fields.js') 
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -13,19 +13,21 @@ const onUploadBucket = function (event) {
     .catch(ui.uploadBucketFailure)
 }
 
-const onDeleteBucket = function () {
+const onDeleteBucket = function (event) {
     event.preventDefault()
-    console.log()
-    api.deleteBucket() 
-    .then(ui.deleteBucketSuccess)
+    console.log(event)
+    const bucketId = $(event.target).closest('section').data('id')
+    api.deleteBucket(bucketId) 
+    .then(() => onGetAllBuckets(event))
     .catch(ui.deleteBucketFailure)
 }
 
 const onUpdateBucket = function (event) {
     event.preventDefault()
     console.log(event)
-    const data = new FormData(event.target)
-   
+    const data = {}
+    data.tags = $(event.target).closest('form').find('textarea').val()
+    data.id = $(event.target).closest('section').data('id')   
     api.updateBucket(data) 
     .then(ui.uploadBucketSuccess)
     .catch(ui.uploadBucketFailure)
@@ -39,9 +41,16 @@ const onGetAllBuckets = function () {
     .catch(ui.getAllBucketsFailure)
 }
 
+const onGetMyBuckets = function () {
+    api.getAllBuckets() 
+    .then(ui.getMyBucketsSuccess)
+    .catch(ui.getMyBucketsFailure)
+}
+
 module.exports = {
     onUploadBucket,
     onDeleteBucket,
     onUpdateBucket,
-    onGetAllBuckets
+    onGetAllBuckets,
+    onGetMyBuckets
 }

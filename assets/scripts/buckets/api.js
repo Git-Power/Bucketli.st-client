@@ -15,9 +15,9 @@ const uploadBucket = function (form) {
     })
 }
 
-const deleteBucket = function() {
+const deleteBucket = function(bucketId) {
     return $.ajax({
-        url: config.apiUrl + '/buckets/' + store.user.id, 
+        url: config.apiUrl + '/buckets/' + bucketId, 
         method: 'DELETE',
         headers: {
             Authorization: 'Token token=' + store.user.token 
@@ -27,12 +27,16 @@ const deleteBucket = function() {
 
 const updateBucket = function(data) {
     return $.ajax({
-        url: config.apiUrl + '/buckets/' + store.user.id, 
+        url: config.apiUrl + '/buckets/' + data.id,
         method: 'PATCH',
         headers: {
             Authorization: 'Token token=' + store.user.token 
         },
-        data: data  
+        data: {
+            bucket: {
+                tags: data.tags
+            }  
+        }
     })
 }
 
