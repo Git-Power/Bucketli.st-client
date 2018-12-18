@@ -24,3 +24,37 @@
 .collapse {
   justify-content: flex-end;
 }
+
+.content-all {
+  align-items: center;
+  display: grid;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-template-columns: auto;
+  height: 90vh;
+  justify-content: center;
+  margin: 35px auto;
+  margin-bottom: 55px;
+  overflow: scroll;
+}
+
+.gallery-all {
+  background-color: white;
+  border-bottom: 1px solid rgba(115, 115, 115, 0.4);
+  border-radius: 5px;
+  border-right: 1px solid rgba(115, 115, 115, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  margin: auto;
+  min-width: 300px;
+  opacity: 0.8;
+  overflow: scroll;
+  padding: 40px 35px 40px 20px;
+  text-align: center;
+  width: 55vw;
+}
+
+img {
+  width: 30%;
+}
