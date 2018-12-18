@@ -37,15 +37,17 @@
 .content {
   display: grid;
   grid-template-columns: auto auto auto;
-  border: 1px solid pink;
 }
 
 .gallery-all {
   display: inline-block;
-  border: 1px solid black;
+  border:1px solid black;
+  box-shadow: 4px 4px 4px #708090;
+  margin:4.5%;
   width: 30vw;
 }
 
 img {
-  width: 30vw;
+  width: 383px;
+  height: 400px;
 }

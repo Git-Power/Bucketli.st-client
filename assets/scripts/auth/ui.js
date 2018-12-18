@@ -32,6 +32,7 @@ const signInFailure = function (error) {
 
 const signOutSuccess = function (data) {
     $('#sign-up').modal()
+    $('#home-screen').show()
 }
 
 const changePasswordSuccess = function (data) {
