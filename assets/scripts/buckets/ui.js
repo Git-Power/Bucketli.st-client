@@ -49,6 +49,8 @@ const deleteBucketSuccess = function () {
 }
 
 const deleteBucketFailure = function () {
+    $('#message').text("Sorry, we were unable to delete your bucket.")
+    //there is no 
 
 }
 
