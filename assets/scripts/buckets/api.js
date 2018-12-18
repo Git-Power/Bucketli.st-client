@@ -27,7 +27,7 @@ const deleteBucket = function() {
 
 const updateBucket = function(data) {
     return $.ajax({
-        url: config.apiUrl + '/buckets/' + store.user.id, 
+        url: config.apiUrl + '/buckets/' + /*image id*/,
         method: 'PATCH',
         headers: {
             Authorization: 'Token token=' + store.user.token 

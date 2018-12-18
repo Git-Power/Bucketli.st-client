@@ -1,4 +1,4 @@
-//const getFormFields = require('../../../lib/get-form-fields.js') 
+const getFormFields = require('../../../lib/get-form-fields.js') 
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -23,8 +23,11 @@ const onDeleteBucket = function () {
 
 const onUpdateBucket = function (event) {
     event.preventDefault()
+    //form pops up to ask for different tags
+    //need to pull tags from this form
+    
     console.log(event)
-    const data = new FormData(event.target)
+    const data = //getFormFields?
    
     api.updateBucket(data) 
     .then(ui.uploadBucketSuccess)

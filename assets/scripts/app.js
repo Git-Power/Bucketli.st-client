@@ -23,5 +23,5 @@ $(() => {
   //Get All Buckets functions attached to get my bucket button, just for now
   //$('#').on('submit', bucketEvents.onGetAllBuckets)
   $('#delete-bucket').on('click', bucketEvents.onDeleteBucket)
-  $('#update-bucket').on('submit', bucketEvents.onUpdateBucket)
+  $('#update-bucket').on('click', bucketEvents.onUpdateBucket)
 })

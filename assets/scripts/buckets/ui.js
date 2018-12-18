@@ -17,7 +17,6 @@ const uploadBucketFailure = function () {
     document.getElementById('upload-form').reset()
 }
 
-
 const getAllBucketsSuccess = function (data) {
     const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets })
     $('#home-screen').hide()
@@ -30,9 +29,22 @@ const getAllBucketsFailure = function () {
     console.log("getAllBucketsFailure ran")
 }
 
+const getMyBucketsSuccess = function (data) {
+    const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets })
+    $('#home-screen').hide()
+    $('.gallery-all').html(getMyBucketsHtml)
+    console.log("data is", data)
+    console.log("data.buckets is", data.buckets)
+}
 
+const getMyBucketsFailure = function (data) {
+    
+}
 
 const deleteBucketSuccess = function () {
+    //make individual image disappear
+    //move other images "forward" in list by refreshing handlebars
+    //
 
 }
 
@@ -53,6 +65,8 @@ module.exports = {
     uploadBucketFailure,
     getAllBucketsSuccess,
     getAllBucketsFailure,
+    getMyBucketsSuccess,
+    getMyBucketsFailure,
     deleteBucketSuccess,
     deleteBucketFailure,
     updateBucketSuccess,
