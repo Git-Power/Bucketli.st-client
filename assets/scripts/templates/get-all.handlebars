@@ -3,9 +3,9 @@
       <div class="gallery-all">
         <img src="{{url}}">
           {{#if (limit user_id)}}
-            <p class="limit">
+            <p class="limit text-center">
               <button class="btn btn-default" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add to this post</button>
-              <button type="submit" class="btn btn-default delete-bucket">Remove this post</button>
+              <button type="submit" class="btn btn-default delete-bucket text-center">Remove this post</button>
             </p>
             <div class="row">
               <div class="col">
@@ -16,7 +16,7 @@
                         <label for="exampleInputPassword1">Description</label>
                         <textarea name="site[description]" class="form-control" rows="8"></textarea>
                       </div>
-                      <div class="form-content">
+                      <div class="form-content text-center">
                         <input type="submit" value="Add to this post" class="btn btn-light update-bucket"></div>
                       <p class="add-site-message"></p>
                     </form>
