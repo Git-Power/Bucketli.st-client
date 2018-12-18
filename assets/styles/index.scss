@@ -16,7 +16,16 @@
   margin-bottom: 3%;
 }
 
+#nav-logo {
+  font-family: 'Righteous', cursive;
+}
+
 #logo-color {
+  font-family: 'Righteous', cursive;
+  color: #337df6;
+}
+
+#nav-logo-color {
   font-family: 'Righteous', cursive;
   color: #337df6;
 }
@@ -25,36 +34,20 @@
   justify-content: flex-end;
 }
 
-.content-all {
-  align-items: center;
+.content {
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
-  grid-template-columns: auto;
-  height: 90vh;
-  justify-content: center;
-  margin: 35px auto;
-  margin-bottom: 55px;
-  overflow: scroll;
+  grid-template-columns: auto auto auto;
 }
 
 .gallery-all {
-  background-color: white;
-  border-bottom: 1px solid rgba(115, 115, 115, 0.4);
-  border-radius: 5px;
-  border-right: 1px solid rgba(115, 115, 115, 0.4);
-  display: flex;
-  flex-direction: column;
-  height: 35vh;
-  margin: auto;
-  min-width: 300px;
-  opacity: 0.8;
-  overflow: scroll;
-  padding: 40px 35px 40px 20px;
-  text-align: center;
-  width: 55vw;
+  display: inline-block;
+  border:1px solid black;
+  box-shadow: 4px 4px 4px #708090;
+  margin:4.5%;
+  width: 30vw;
 }
 
 img {
-  width: 30%;
+  width: 383px;
+  height: 400px;
 }
