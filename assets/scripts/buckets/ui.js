@@ -56,7 +56,7 @@ const deleteBucketFailure = function () {
 }
 
 const updateBucketSuccess = function () {
-
+    
 }
 
 const updateBucketFailure = function () {

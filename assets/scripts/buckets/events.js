@@ -13,12 +13,12 @@ const onUploadBucket = function (event) {
     .catch(ui.uploadBucketFailure)
 }
 
-const onDeleteBucket = function (event) {
+const onDeleteBucket = function () {
     event.preventDefault()
-    console.log(event)
+    console.log("onUpdateBucket ran")
     const bucketId = $(event.target).closest('section').data('id')
     api.deleteBucket(bucketId) 
-    .then(() => onGetAllBuckets(event))
+    .then(() => onGetMyBuckets(event))
     .catch(ui.deleteBucketFailure)
 }
 
@@ -26,11 +26,11 @@ const onUpdateBucket = function (event) {
     event.preventDefault()
     console.log(event)
     const data = {}
-    data.tags = $(event.target).closest('form').find('textarea').val()
+    data.tags = $(event.target).closest('form').find('input').val()
     data.id = $(event.target).closest('section').data('id')   
     api.updateBucket(data) 
-    .then(ui.uploadBucketSuccess)
-    .catch(ui.uploadBucketFailure)
+    .then(() => onGetMyBuckets(event))
+    .catch(ui.updateBucketFailure)
 }
 
 const onGetAllBuckets = function () {

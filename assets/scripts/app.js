@@ -20,6 +20,6 @@ $(() => {
   })
   $('#upload-form').on('submit', bucketEvents.onUploadBucket)
   $('#get-my-buckets').on('click', bucketEvents.onGetMyBuckets)
-  $('#delete-bucket').on('click', bucketEvents.onDeleteBucket)
-  $('#update-bucket').on('click', bucketEvents.onUpdateBucket)
+  $('.content').on('click', '.delete-bucket', bucketEvents.onDeleteBucket)
+  $('.content').on('click', '.update-bucket', bucketEvents.onUpdateBucket)
 })
