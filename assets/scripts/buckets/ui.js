@@ -19,8 +19,9 @@ const uploadBucketFailure = function () {
 
 const getAllBucketsSuccess = function (data) {
     const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets })
-    $('#home-screen').hide()
+    $('#home-screen').fadeOut(1000)
     $('.content').html(getAllBucketsHtml)
+    $('.content').hide().fadeIn(3250)
     console.log(data)
 }
 
@@ -29,11 +30,12 @@ const getAllBucketsFailure = function () {
 }
 
 const getMyBucketsSuccess = function (data) {
-    const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets })
-    $('#home-screen').hide()
-    $('.gallery-all').html(getMyBucketsHtml)
     console.log("data is", data)
     console.log("data.buckets is", data.buckets)
+    const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets })
+    $('#home-screen').hide()
+    $('.content').html(getMyBucketsHtml)
+  
 }
 
 const getMyBucketsFailure = function (data) {
@@ -54,7 +56,7 @@ const deleteBucketFailure = function () {
 }
 
 const updateBucketSuccess = function () {
-
+    
 }
 
 const updateBucketFailure = function () {

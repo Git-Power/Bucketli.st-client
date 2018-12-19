@@ -1,7 +1,10 @@
+{{log "buckets in get-my.handlebars is" buckets}}
+
 {{#each buckets}}
 
-  {{#if (limit _id)}}
-    <section data-id={{id}}>
+
+ {{#if (limit owner)}}
+    <section data-id={{_id}}>
         <div class="gallery-all">
           <img src="{{url}}">
               <p class="limit">
@@ -14,8 +17,8 @@
                     <div class="card card-body">
                       <form class="append-content">
                         <div class="form-group">
-                          <label for="exampleInputPassword1">Description</label>
-                          <textarea name="site[description]" class="form-control" rows="8"></textarea>
+                          <label for="exampleInputPassword1">Tags</label>
+                          <input name="bucket[tags]" class="form-control" rows="8"></input>
                         </div>
                         <div class="form-content">
                           <input type="submit" value="Add to this post" class="btn btn-light update-bucket"></div>
