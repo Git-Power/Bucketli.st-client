@@ -29,10 +29,18 @@ Technologies Used:
 6. AJAX
 7. Handle Bars
 
+LIST OF PROBLEMS/FIXABLE:
+1. Make app more mobile friendly.
 
 FILE BUCKET CLIENT REPOSITORY:
 https://github.com/Git-Power/FileBucket-client
 
 FILE BUCKET CLIENT GITHUB PAGES:
 https://git-power.github.io/FileBucket-client/
+
+FILE BUCKET BACKEND REPOSITORY:
+https://github.com/Git-Power/FileBucket/
+
+HEROKU:
+https://stormy-crag-73344.herokuapp.com/
 
