@@ -8,6 +8,7 @@ const signUpSuccess = function(data) {
     $('#message-up').removeClass()
     $('#message-up').addClass('success')
     console.log('signUpSuccess ran. Data is :', data)
+    $('#sign-up-form')[0].reset()
     //we want to add a sign in function here so
     //you automatically get signed in when you sign up
     
@@ -41,6 +42,7 @@ const signOutSuccess = function (data) {
     $('#sign-up').modal()
     $('#home-screen').show()
     $('#homescreen-jpg').css('filter', 'blur(7px)')
+    $('#sign-in-form')[0].reset()
 }
 
 const changePasswordSuccess = function (data) {
