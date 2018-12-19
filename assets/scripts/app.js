@@ -19,9 +19,7 @@ $(() => {
     $('.auth-message').text('')
   })
   $('#upload-form').on('submit', bucketEvents.onUploadBucket)
-  $('#get-my-buckets').on('click', bucketEvents.onGetAllBuckets)
-  //Get All Buckets functions attached to get my bucket button, just for now
-  //$('#').on('submit', bucketEvents.onGetAllBuckets)
+  $('#get-my-buckets').on('click', bucketEvents.onGetMyBuckets)
   $('#delete-bucket').on('click', bucketEvents.onDeleteBucket)
   $('#update-bucket').on('click', bucketEvents.onUpdateBucket)
 })

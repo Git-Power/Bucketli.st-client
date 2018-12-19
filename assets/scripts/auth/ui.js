@@ -1,4 +1,7 @@
 const store = require('../store.js')
+const bucketEvents = require('../buckets/events.js')
+
+
 
 const signUpSuccess = function(data) {
     $('#message-up').text('Signed up successfully')
@@ -21,7 +24,11 @@ const signInSuccess = function (data) {
     // console.log(data.user)
     store.user = data.user
     $('#sign-in').modal('toggle')
+    $('#homescreen-jpg').css('filter', 'blur(0px)')
+    //usedelay
+    bucketEvents.onGetAllBuckets()
 }
+
 
 const signInFailure = function (error) {
     $('#message-up').text('Wrong E-mail or Password')

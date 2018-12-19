@@ -1,7 +1,11 @@
+{{log "buckets in get-my.handlebars is" buckets}}
+
 {{#each buckets}}
 
-  {{#if (limit _id)}}
+
+ 
     <section data-id={{id}}>
+ {{#if (limit owner)}}
         <div class="gallery-all">
           <img src="{{url}}">
               <p class="limit">
