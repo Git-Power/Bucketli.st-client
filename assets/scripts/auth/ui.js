@@ -40,6 +40,7 @@ const signInFailure = function (error) {
 const signOutSuccess = function (data) {
     $('#sign-up').modal()
     $('#home-screen').show()
+    $('#homescreen-jpg').css('filter', 'blur(7px)')
 }
 
 const changePasswordSuccess = function (data) {
