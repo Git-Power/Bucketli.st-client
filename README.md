@@ -1,6 +1,7 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-[![Wire Fram](https://imgur.com/gZaWxfi)]
+![image from ios](https://user-images.githubusercontent.com/38407813/50248354-c0782880-03a8-11e9-8d01-3d8ced6c850f.jpg)
+
 
 FILE BUCKET:
 File bucket is a single web page app that allows it's users to upload and save photos. After signing up for an account with File Bucket, the user may upload load pictures of buckets, share them and download them.
