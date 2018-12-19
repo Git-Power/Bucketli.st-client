@@ -1,11 +1,33 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  height: 100%;
+}
+
 #homescreen-jpg {
+  background-image: url("../../public/images/homescreen.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  min-width: 1000px;
-  height: auto;
+  height: 75vh;
+  min-height: 950px;
+  min-width: 800px;
   filter: blur(7px);
+}
+
+#bg-text {
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: fit-content;
+  padding: 20px 40px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
 }
 
 #logo {
@@ -37,17 +59,29 @@
 .content {
   display: grid;
   grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  margin: 0 100px;
 }
 
 .gallery-all {
-  display: inline-block;
-  border:1px solid black;
-  box-shadow: 4px 4px 4px #708090;
-  margin:4.5%;
-  width: 30vw;
+  justify-content: center;
+  height: 500px;
+  width: 400px;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
 }
 
 img {
-  width: 383px;
+  object-fit: cover;
+  width: 400px;
   height: 400px;
+}
+
+.handle-btn {
+  background-color: #337df6;
+  color: white;
+  border-radius: 8px;
+  padding: 9px;
 }

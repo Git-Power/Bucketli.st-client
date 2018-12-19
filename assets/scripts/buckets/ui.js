@@ -35,11 +35,11 @@ const getMyBucketsSuccess = function (data) {
     const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets })
     $('#home-screen').hide()
     $('.content').html(getMyBucketsHtml)
-  
+    $('#get-all').show()
 }
 
 const getMyBucketsFailure = function (data) {
-    
+
 }
 
 const deleteBucketSuccess = function () {
@@ -51,12 +51,12 @@ const deleteBucketSuccess = function () {
 
 const deleteBucketFailure = function () {
     $('#message').text("Sorry, we were unable to delete your bucket.")
-    //there is no 
+    //there is no
 
 }
 
 const updateBucketSuccess = function () {
-    
+
 }
 
 const updateBucketFailure = function () {

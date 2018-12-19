@@ -15,11 +15,15 @@ $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('.cls').click(function() {
-    $('.auth-message').text('')
-  })
   $('#upload-form').on('submit', bucketEvents.onUploadBucket)
   $('#get-my-buckets').on('click', bucketEvents.onGetMyBuckets)
   $('.content').on('click', '.delete-bucket', bucketEvents.onDeleteBucket)
   $('.content').on('click', '.update-bucket', bucketEvents.onUpdateBucket)
+  $('.cls').click(function () {
+    $('.auth-message').text('')
+  })
+  $('.navbar-brand').click(function () {
+    $('#home-screen').show()
+    $('#get-all').hide()
+  })
 })
