@@ -6,12 +6,12 @@
  {{#if (limit owner)}}
     <section data-id={{_id}}>
         <div class="gallery-all">
-          <div class="image">
-            <img src="{{url}}">
-          </div>
+            <a href={{url}} target="_blank">
+                  <img src="{{url}}">
+            </a>
               <p class="limit">
                 <button class="handle-btn" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add to this post</button>
-                <button type="submit" class="handle-btn">Remove this post</button>
+                <button type="submit" class="handle-btn delete-bucket">Remove this post</button>
               </p>
               <div class="row">
                 <div class="col">
