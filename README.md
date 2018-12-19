@@ -33,3 +33,6 @@ Technologies Used:
 FILE BUCKET CLIENT REPOSITORY:
 https://github.com/Git-Power/FileBucket-client
 
+FILE BUCKET CLIENT GITHUB PAGES:
+https://git-power.github.io/FileBucket-client/
+
