@@ -20,9 +20,10 @@ const uploadBucketFailure = function () {
 
 const getAllBucketsSuccess = function (data) {
   const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets.reverse() })
-  $('#home-screen').fadeOut(1000)
   $('.content').html(getAllBucketsHtml)
-  $('.content').hide().fadeIn(3250)
+  $('#home-screen').fadeOut(1000)
+  $('.content').hide().fadeIn(1250)
+  $('#get-all').show()
   console.log(data)
 }
 
@@ -33,7 +34,6 @@ const getAllBucketsFailure = function () {
 let userBuckets = []
 
 const getMyBucketsSuccess = function (data) {
-  console.log('data is', data)
   console.log('data.buckets is', data.buckets)
   const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets.reverse() })
   // create data object of buckets owned by store.user.id:
@@ -49,6 +49,9 @@ const getMyBucketsSuccess = function (data) {
   } else
   {
     $('.content').html(getMyBucketsHtml)
+    $('#home-screen').fadeOut(1000)
+    $('.content').hide().fadeIn(1250)
+    $('#get-all').show()
   }
 }
 
