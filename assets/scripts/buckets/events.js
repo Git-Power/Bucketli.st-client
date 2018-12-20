@@ -30,6 +30,7 @@ const onUpdateBucket = function (event) {
   data.id = $(event.target).closest('section').data('id')
   api.updateBucket(data)
     .then(() => onGetMyBuckets(event))
+    .then(ui.updateBucketSuccess)
     .catch(ui.updateBucketFailure)
 }
 
