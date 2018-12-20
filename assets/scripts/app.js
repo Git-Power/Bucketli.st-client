@@ -29,4 +29,5 @@ $(() => {
     $('#home-screen').show()
     $('#get-all').hide()
   })
+
 })
