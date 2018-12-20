@@ -9,6 +9,7 @@ const onUploadBucket = function (event) {
   console.log('event.target is', event.target)
   console.log('form is', form)
   api.uploadBucket(form)
+    .then(() => onGetAllBuckets(event))
     .then(ui.uploadBucketSuccess)
     .catch(ui.uploadBucketFailure)
 }
@@ -29,7 +30,7 @@ const onUpdateBucket = function (event) {
   data.tags = $(event.target).closest('form').find('input').val()
   data.id = $(event.target).closest('section').data('id')
   api.updateBucket(data)
-    .then(() => onGetMyBuckets(event))
+    // .then(() => onGetMyBuckets(event))
     .then(ui.updateBucketSuccess)
     .catch(ui.updateBucketFailure)
 }
