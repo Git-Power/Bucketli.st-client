@@ -19,9 +19,12 @@ $(() => {
   $('#get-my-buckets').on('click', bucketEvents.onGetMyBuckets)
   $('.content').on('click', '.delete-bucket', bucketEvents.onDeleteBucket)
   $('.content').on('click', '.update-bucket', bucketEvents.onUpdateBucket)
+  $('#mag').on('click', bucketEvents.onSearchBuckets)
+
   $('.cls').click(function () {
     $('.auth-message').text('')
   })
+
   $('.navbar-brand').click(function () {
     $('#home-screen').show()
     $('#get-all').hide()
