@@ -5,12 +5,7 @@ const showSearchTemplate = require('../templates/get-search.handlebars')
 
 const uploadBucketSuccess = function () {
   $('#message-change').text('Your bucket has been successfully uploaded')
-  // instead of a written message
-  // go to get all buckets for this user
-  // show newest upload at "beginning" of uploads list
   document.getElementById('upload-form').reset()
-  // user should be able to continue to make uploads until they
-  // hit close button... then all new images appear at beginning
 }
 
 const uploadBucketFailure = function () {
@@ -46,7 +41,7 @@ const deleteBucketFailure = function () {
 }
 
 const updateBucketSuccess = function () {
-
+  $('#navbarDropdown').fadeOut(100).fadeIn(500).fadeOut(100).fadeIn(500)
 }
 
 const updateBucketFailure = function () {
