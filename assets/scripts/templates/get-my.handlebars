@@ -13,27 +13,27 @@
                 <button class="handle-btn" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add to this post</button>
                 <button type="submit" class="handle-btn delete-bucket">Remove this post</button>
               </p>
-              <div class="row">
-                <div class="col">
-                  <div class="collapse multi-collapse" id="multiCollapseExample1">
-                    <div class="card card-body">
-                      <form class="append-content">
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Tags</label>
-                          <input name="bucket[tags]" class="form-control" rows="8"></input>
-                        </div>
-                        <div class="form-content">
-                          <input type="submit" value="Add to this post" class="btn btn-light update-bucket"></div>
-                        <p class="add-site-message"></p>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
             {{else}}
               <p></p>
           {{/if}}
         </div>
+        <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                  <form class="append-content">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Tags</label>
+                      <input name="bucket[tags]" class="form-control" rows="8"></input>
+                    </div>
+                    <div class="form-content">
+                      <input type="submit" value="Add to this post" class="btn btn-light update-bucket"></div>
+                    <p class="add-site-message"></p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
     </section>
 
 {{/each}}
