@@ -23,6 +23,7 @@ const getAllBucketsSuccess = function (data) {
   $('#home-screen').fadeOut(1000)
   $('.content').html(getAllBucketsHtml)
   $('.content').hide().fadeIn(3250)
+  $('#get-all').show()
   console.log(data)
 }
 
@@ -35,6 +36,9 @@ const getMyBucketsSuccess = function (data) {
   console.log('data.buckets is', data.buckets)
   const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets })
   $('.content').html(getMyBucketsHtml)
+  $('#home-screen').fadeOut(1000)
+  $('.content').hide().fadeIn(2250)
+  $('#get-all').show()
 }
 
 const getMyBucketsFailure = function (data) {
