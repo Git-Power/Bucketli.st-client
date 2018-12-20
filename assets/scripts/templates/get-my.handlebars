@@ -10,7 +10,7 @@
                   <img src="{{url}}">
             </a>
               <p class="limit">
-                <button class="handle-btn" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add to this post</button>
+                <button class="handle-btn" data-toggle="collapse" href="#picture{{_id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add to this post</button>
                 <button type="submit" class="handle-btn delete-bucket">Remove this post</button>
               </p>
             {{else}}
@@ -19,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col">
-              <div class="collapse multi-collapse" id="multiCollapseExample1">
+              <div class="collapse multi-collapse" id="picture{{_id}}">
                 <div class="card card-body">
                   <form class="append-content">
                     <div class="form-group">
