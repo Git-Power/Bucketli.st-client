@@ -36,19 +36,11 @@ const getMyBucketsSuccess = function (data) {
   console.log('data is', data)
   console.log('data.buckets is', data.buckets)
   const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets.reverse() })
-  // create data object of buckets owned by store.user.id
-  userBuckets = data.buckets
-  // // data.buckets.filter(function (bucket) {
-  // //   if(bucket.data.buckets.owner === store.user.id)
-  // // })
-
-  // data.buckets.forEach(function(bucket) {
-  //   if (data.buckets.owner === store.user._id) {
-  //     userBuckets.push(bucket)
-  //   } 
-  // })
-
-  userBuckets = bucketsData.filter((bucket) => bucket.owner === store.user.id)
+  // create data object of buckets owned by store.user.id:
+  //create new array which is all the elements of the data.buckets array
+  //where data.buckets.owner === store.user.id
+  
+  userBuckets = data.buckets.filter(bucket => bucket.owner === store.user._id)
 
   console.log("userBuckets is", userBuckets)
   if (userBuckets.length === 0) {
