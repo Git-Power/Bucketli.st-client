@@ -6,6 +6,7 @@ const showSearchTemplate = require('../templates/get-search.handlebars')
 const uploadBucketSuccess = function () {
   $('#message-change').text('Your bucket has been successfully uploaded')
   document.getElementById('upload-form').reset()
+  $('#navbarDropdown').fadeOut(100).fadeIn(500).fadeOut(100).fadeIn(500)
 }
 
 const uploadBucketFailure = function () {
@@ -45,7 +46,7 @@ const updateBucketSuccess = function () {
 }
 
 const updateBucketFailure = function () {
-
+  $('.add-site-message').text('There seems to be a problem. Please try again.')
 }
 
 let results = { resultsarr: [] }
