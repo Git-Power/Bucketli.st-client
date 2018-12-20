@@ -29,4 +29,9 @@ $(() => {
     $('#home-screen').show()
     $('#get-all').hide()
   })
+
+  // $('#nav-logo').click(function () {
+  //   $('#home-screen').hide()
+  //   $('#get-all-buckets').show()
+  // })
 })
