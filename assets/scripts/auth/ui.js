@@ -15,7 +15,7 @@ const signUpSuccess = function(data) {
 }
 
 const signUpFailure = function (error) {
-    $('#message-up').text('Please Use A Valid E-mail')
+    $('#message-up').text('There has been an error, please try again.')
     $('#message-up').removeClass()
     $('#message-up').addClass('failure')
     // console.error('signUpFailure ran. Error is :', error)
