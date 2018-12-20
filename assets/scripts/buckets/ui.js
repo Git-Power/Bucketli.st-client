@@ -5,12 +5,7 @@ const showSearchTemplate = require('../templates/get-search.handlebars')
 
 const uploadBucketSuccess = function () {
   $('#message-change').text('Your bucket has been successfully uploaded')
-  // instead of a written message
-  // go to get all buckets for this user
-  // show newest upload at "beginning" of uploads list
   document.getElementById('upload-form').reset()
-  // user should be able to continue to make uploads until they
-  // hit close button... then all new images appear at beginning
 }
 
 const uploadBucketFailure = function () {
@@ -24,28 +19,19 @@ const getAllBucketsSuccess = function (data) {
   $('#home-screen').fadeOut(1000)
   $('.content').hide().fadeIn(1250)
   $('#get-all').show()
-  console.log(data)
 }
 
 const getAllBucketsFailure = function () {
-  console.log('getAllBucketsFailure ran')
 }
 
 let userBuckets = []
 
 const getMyBucketsSuccess = function (data) {
-  console.log('data.buckets is', data.buckets)
   const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets.reverse() })
-  // create data object of buckets owned by store.user.id:
-  //create new array which is all the elements of the data.buckets array
-  //where data.buckets.owner === store.user.id
-  
   userBuckets = data.buckets.filter(bucket => bucket.owner === store.user._id)
 
-  console.log("userBuckets is", userBuckets)
   if (userBuckets.length === 0) {
     $('.content').text("You do not have any buckets yet. Please upload some buckets!")
-    
   } else
   {
     $('.content').html(getMyBucketsHtml)
@@ -92,7 +78,7 @@ const searchBucketsSuccess = (data) => {
       if (el['tags'].includes(input)) {
         results.resultsarr.push(el)
       } else {
-        console.log('No match')
+       
       }
     }
   })

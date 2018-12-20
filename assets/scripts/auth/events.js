@@ -34,7 +34,6 @@ const onChangePassword = event => {
     $(event.target).trigger('reset')
 }
 
-
 module.exports = {
     onSignUp,
     onSignIn,
