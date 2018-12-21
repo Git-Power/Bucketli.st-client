@@ -52,6 +52,16 @@ body {
   color: #337df6;
 }
 
+#mag {
+  border: 1px solid #337df6;
+  color: #337df6;
+}
+
+#mag:hover {
+  background-color: #337df6;
+  color: white;
+}
+
 .collapse {
   justify-content: flex-end;
 }
