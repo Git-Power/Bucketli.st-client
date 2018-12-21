@@ -64,7 +64,8 @@ const deleteBucketFailure = function () {
 }
 
 const updateBucketSuccess = function () {
-
+  $('#navbarDropdown').fadeOut(100).fadeIn(500).fadeOut(100).fadeIn(500)
+  $('.collapse').collapse('hide')
 }
 
 const updateBucketFailure = function () {
