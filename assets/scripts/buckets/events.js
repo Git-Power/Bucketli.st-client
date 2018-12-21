@@ -25,7 +25,6 @@ const onDeleteBucket = function () {
 
 const onUpdateBucket = function (event) {
   event.preventDefault()
-  console.log(event)
   const data = {}
   data.tags = $(event.target).closest('form').find('input').val()
   data.id = $(event.target).closest('section').data('id')
