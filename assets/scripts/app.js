@@ -21,6 +21,7 @@ $(() => {
   $('.content').on('click', '.update-bucket', bucketEvents.onUpdateBucket)
   $('#mag').on('click', bucketEvents.onSearchBuckets)
   $('#get-all-buckets').on('click', bucketEvents.onGetAllBuckets)
+
   $('.cls').click(function () {
     $('.auth-message').text('')
   })
@@ -29,5 +30,4 @@ $(() => {
     $('#home-screen').show()
     $('#get-all').hide()
   })
-
 })

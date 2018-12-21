@@ -31,9 +31,8 @@ const getMyBucketsSuccess = function (data) {
   userBuckets = data.buckets.filter(bucket => bucket.owner === store.user._id)
 
   if (userBuckets.length === 0) {
-    $('.content').text("You do not have any buckets yet. Please upload some buckets!")
-  } else
-  {
+    $('.content').text('You do not have any buckets yet. Please upload some buckets!')
+  } else {
     $('.content').html(getMyBucketsHtml)
     $('#home-screen').fadeOut(1000)
     $('.content').hide().fadeIn(1250)
@@ -42,7 +41,7 @@ const getMyBucketsSuccess = function (data) {
 }
 
 const getMyBucketsFailure = function (data) {
-  $('.content').text("We were unable to retrieve your buckets. Please try again.")
+  $('.content').text('We were unable to retrieve your buckets. Please try again.')
 }
 
 const deleteBucketFailure = function () {
@@ -63,12 +62,13 @@ let results = { resultsarr: [] }
 
 const searchResultsVisual = () => {
   $('#home-screen').hide()
-  $('#get-all').show()
+  $('get-all').fadeOut(500)
+  $('#get-all').fadeIn(1000)
   const showBucketsHtml = showSearchTemplate({
     resultsarr: results.resultsarr
   })
-  $('.content').hide().fadeIn(500)
   $('.content').html(showBucketsHtml)
+  $('#searchbar').val('')
 }
 
 const searchBucketsSuccess = (data) => {
@@ -80,7 +80,6 @@ const searchBucketsSuccess = (data) => {
       if (el['tags'].includes(input)) {
         results.resultsarr.push(el)
       } else {
-       
       }
     }
   })
