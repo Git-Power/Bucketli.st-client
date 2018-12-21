@@ -5,8 +5,12 @@ const showSearchTemplate = require('../templates/get-search.handlebars')
 
 const uploadBucketSuccess = function () {
   $('#message-change').text('Your bucket has been successfully uploaded')
+  // instead of a written message
+  // go to get all buckets for this user
+  // show newest upload at "beginning" of uploads list
   document.getElementById('upload-form').reset()
-  $('#navbarDropdown').fadeOut(100).fadeIn(500).fadeOut(100).fadeIn(500)
+  // user should be able to continue to make uploads until they
+  // hit close button... then all new images appear at beginning
 }
 
 const uploadBucketFailure = function () {
@@ -15,7 +19,7 @@ const uploadBucketFailure = function () {
 }
 
 const getAllBucketsSuccess = function (data) {
-  const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets })
+  const getAllBucketsHtml = getAllBucketsTemplate({ buckets: data.buckets.reverse() })
   $('.content').html(getAllBucketsHtml)
   $('#home-screen').fadeOut(1000)
   $('.content').hide().fadeIn(1250)
@@ -27,17 +31,32 @@ const getAllBucketsFailure = function () {
   console.log('getAllBucketsFailure ran')
 }
 
+let userBuckets = []
+
 const getMyBucketsSuccess = function (data) {
   console.log('data.buckets is', data.buckets)
-  const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets })
-  $('.content').html(getMyBucketsHtml)
-  $('#home-screen').fadeOut(1000)
-  $('.content').hide().fadeIn(1250)
-  $('#get-all').show()
+  const getMyBucketsHtml = getMyBucketsTemplate({ buckets: data.buckets.reverse() })
+  // create data object of buckets owned by store.user.id:
+  //create new array which is all the elements of the data.buckets array
+  //where data.buckets.owner === store.user.id
+  
+  userBuckets = data.buckets.filter(bucket => bucket.owner === store.user._id)
+
+  console.log("userBuckets is", userBuckets)
+  if (userBuckets.length === 0) {
+    $('.content').text("You do not have any buckets yet. Please upload some buckets!")
+    
+  } else
+  {
+    $('.content').html(getMyBucketsHtml)
+    $('#home-screen').fadeOut(1000)
+    $('.content').hide().fadeIn(1250)
+    $('#get-all').show()
+  }
 }
 
 const getMyBucketsFailure = function (data) {
-
+  $('.content').text("We were unable to retrieve your buckets. Please try again.")
 }
 
 const deleteBucketFailure = function () {
@@ -50,7 +69,7 @@ const updateBucketSuccess = function () {
 }
 
 const updateBucketFailure = function () {
-  $('.add-site-message').text('There seems to be a problem. Please try again.')
+
 }
 
 let results = { resultsarr: [] }
