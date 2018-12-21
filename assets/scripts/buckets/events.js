@@ -1,13 +1,9 @@
-const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onUploadBucket = function (event) {
   event.preventDefault()
-  console.log(event)
   const form = new FormData(event.target)
-  console.log('event.target is', event.target)
-  console.log('form is', form)
   api.uploadBucket(form)
     .then(() => onGetAllBuckets(event))
     .then(ui.uploadBucketSuccess)
@@ -16,7 +12,6 @@ const onUploadBucket = function (event) {
 
 const onDeleteBucket = function () {
   event.preventDefault()
-  console.log('onUpdateBucket ran')
   const bucketId = $(event.target).closest('section').data('id')
   api.deleteBucket(bucketId)
     .then(() => onGetMyBuckets(event))
@@ -25,7 +20,6 @@ const onDeleteBucket = function () {
 
 const onUpdateBucket = function (event) {
   event.preventDefault()
-  console.log(event)
   const data = {}
   data.tags = $(event.target).closest('form').find('input').val()
   data.id = $(event.target).closest('section').data('id')
@@ -36,8 +30,6 @@ const onUpdateBucket = function (event) {
 }
 
 const onGetAllBuckets = function () {
-  // event.preventDefault()
-  console.log('events.onGetAllBuckets ran')
   api.getAllBuckets()
     .then(ui.getAllBucketsSuccess)
     .catch(ui.getAllBucketsFailure)
