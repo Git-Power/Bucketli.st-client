@@ -2,10 +2,6 @@
 
 FileBucket is a single web page app that allows users to upload and save photos. After signing up for an account with FileBucket, the user may upload load pictures of buckets, share them, and download them. User owned resources can be updated and deleted, while resources belonging to other owners can be viewed and downloaded. Images are stored in S3 on AWS while information regarding image tags are saved to our database using an Express back-end.
 
-### Wireframes
-
-![image from ios](https://user-images.githubusercontent.com/38407813/50248354-c0782880-03a8-11e9-8d01-3d8ced6c850f.jpg)
-
 ### User stories:
 1. As a user I should be able to upload (post) new files and see a list of all my files at once (index) and individually (show).
 
@@ -18,6 +14,10 @@ FileBucket is a single web page app that allows users to upload and save photos.
 5. As a user, I should be able to sign up and sign in with a email and password.
 
 6. As a user, I should be able to change password or sign out after being signed into my user account.
+
+### Wireframes
+
+![image from ios](https://user-images.githubusercontent.com/38407813/50248354-c0782880-03a8-11e9-8d01-3d8ced6c850f.jpg)
 
 ### Technologies Used:
 1. HTML
