@@ -3,35 +3,32 @@ const bucketEvents = require('../buckets/events.js')
 
 const signUpSuccess = function (data) {
   $('#message-up').text('Signed up successfully')
-  $('#message-up').removeClass()
-  $('#message-up').addClass('success')
   $('#sign-up-form')[0].reset()
 }
 
 const signUpFailure = function () {
   $('#message-up').text('There has been an error, please try again.')
-  $('#message-up').removeClass()
-  $('#message-up').addClass('failure')
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
   $('#sign-in').modal('toggle')
   $('#homescreen-jpg').css('filter', 'blur(0px)')
+  $('#message-up').text('')
   bucketEvents.onGetAllBuckets()
 }
 
 const signInFailure = function () {
-  $('#message-up').text('Wrong E-mail or Password')
-  $('#message-up').removeClass()
-  $('#message-up').addClass('failure')
+  $('#message-in').text('Something went wrong. Please try again.')
 }
 
 const signOutSuccess = function (data) {
+  $('.auth-message').text('')
   $('#sign-up').modal()
   $('#home-screen').show()
   $('#homescreen-jpg').css('filter', 'blur(7px)')
   $('#sign-in-form')[0].reset()
+  $('.content').hide()
 }
 
 const changePasswordSuccess = function (data) {
