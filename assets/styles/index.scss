@@ -4,6 +4,10 @@ body {
   height: 100%;
 }
 
+#sign-in-close {
+  display: none;
+}
+
 #homescreen-jpg {
   background-image: url("public/images/homescreen.jpg");
   background-position: center;
